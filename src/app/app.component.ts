@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  // * String
   groceryItem: string = 'apple';
 
   // * Array of strings
@@ -32,9 +31,25 @@ export class AppComponent {
   isPrimary: boolean = true;
   isDisabled: boolean = false;
 
-  // * Function to enter grocery item: ngModel example
+  // * ngModel example
+  // * Function to enter grocery item:
   handleGroceryItemChange(event: Event): void {
     let inputElement = event.target as HTMLInputElement;
     this.groceryItem = inputElement.value;
+  }
+
+  // * Function to add a fruit to the list using groceryItem data
+  handleAddFruit() {
+    if (Boolean(this.groceryItem)) {
+      this.groceryList = [...this.groceryList, this.groceryItem];
+      this.groceryItem = '';
+    }
+  }
+
+  // * Custom function with parameters to add a grocery item to the list
+  handleAddFruitName(fruit: string) {
+    if (Boolean(fruit)) {
+      this.groceryList = [...this.groceryList, fruit];
+    }
   }
 }
