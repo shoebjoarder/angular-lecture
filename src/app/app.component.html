@@ -1,1 +1,18 @@
-<div>Angular App</div>
+<div>
+  <h2>Grocery List</h2>
+
+  <ul>
+    <li *ngFor="let item of groceryList.sort()">
+      {{ item }}
+    </li>
+  </ul>
+
+  <p>Please enter a fruit name</p>
+</div>
+<div>
+  <input />
+
+  <button>Add</button>
+
+  <button>Add (Function)</button>
+</div>
