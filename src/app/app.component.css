@@ -1,0 +1,10 @@
+.button-primary {
+  background-color: blue;
+  color: white;
+}
+
+.button-disabled {
+  background-color: gray;
+  color: lightgray;
+  cursor: not-allowed;
+}

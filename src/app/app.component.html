@@ -2,17 +2,50 @@
   <h2>Grocery List</h2>
 
   <ul>
+    <!-- * structural directive *ngFor -->
     <li *ngFor="let item of groceryList.sort()">
       {{ item }}
     </li>
   </ul>
 
-  <p>Please enter a fruit name</p>
+  <!-- * structural directive *ngIf -->
+  <p *ngIf="groceryItem">You would like to add "{{ groceryItem }}"</p>
+  <p *ngIf="!groceryItem">Please enter a fruit name</p>
 </div>
 <div>
-  <input />
+	<!-- * Attribute directive "ngModel" -->
+  <!-- <input
+    value="apple"
+    (input)="handleGroceryItemChange($event)"
+  /> -->
 
-  <button>Add</button>
+  <input [(ngModel)]="groceryItem" />
 
-  <button>Add (Function)</button>
+  <!-- * Attribute directive "ngStyle" -->
+  <!-- <button style="background-color: black; color: white">
+    Add
+	</button> -->
+
+  <button
+    [ngStyle]="{
+      'background-color': addButtonColor,
+      color: 'white',
+    }"
+  >
+    Add
+  </button>
+
+  <!-- * Attribute directive "ngClass" -->
+  <!-- <button class="button-primary button-disabled">
+		Add (Function)
+	</button> -->
+
+  <button
+    [ngClass]="{
+			'button-primary': isPrimary,
+			'button-disabled': isDisabled,
+		}"
+  >
+    Add (Function)
+  </button>
 </div>
