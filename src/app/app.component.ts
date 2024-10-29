@@ -3,14 +3,21 @@ import { IFruit } from './model/grocery';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+// * Import from named export
+// import {FruitbuttonComponent} from './fruitbutton/fruitbutton.component';
+
+// * Import from default export
+import FruitbuttonComponent from './fruitbutton/fruitbutton.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FruitbuttonComponent, CommonModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  // * String
   groceryItem: string = 'apple';
 
   // * Array of strings
