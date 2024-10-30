@@ -27,7 +27,7 @@ export class AppComponent {
   // **********************************************************
 
   // * HTML/CSS
-  groceryListTitleHTML: any = `<h2 style={{ color: "red" }}>HTML Grocery List</h2>`;
+  groceryListTitleFromModel: string = `<h2>HTML Grocery List</h2>`;
 
   // **********************************************************
   // * Complex types ******************************************
