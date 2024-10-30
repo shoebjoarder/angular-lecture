@@ -31,6 +31,9 @@ export class AppComponent {
   isPrimary: boolean = true;
   isDisabled: boolean = false;
 
+  // * Property binding example
+  groceryListTitleFromModel: string = `<h2>HTML Grocery List</h2>`;
+
   // * ngModel example
   // * Function to enter grocery item:
   handleGroceryItemChange(event: Event): void {
