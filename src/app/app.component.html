@@ -3,26 +3,18 @@
 
   <ul>
     <li *ngFor="let item of groceryList.sort()">
-      <!-- * String interpolation -->
       {{ item }}
     </li>
   </ul>
 
   <p *ngIf="groceryItem">
-    <!-- * String interpolation + Pipes -->
     You would like to add "{{ groceryItem | uppercase | slice : 0 : 3 }}"
   </p>
   <p *ngIf="!groceryItem">Please enter a fruit name</p>
 </div>
 <div>
-  <!-- * Property binding -->
-  <!-- <input value="apple" (input)="handleGroceryItemChange($event)" /> -->
-  <input [value]="groceryItem" (input)="handleGroceryItemChange($event)" />
+  <input [(ngModel)]="groceryItem" />
 
-  <!-- * Two-way data binding -->
-  <!-- <input [(ngModel)]="groceryItem" /> -->
-
-  <!-- * Event binding -->
   <button
     (click)="handleAddFruit()"
     [ngStyle]="{
@@ -42,4 +34,13 @@
   >
     Add (Function)
   </button>
+</div>
+<!-- * Input props and custom events for child components -->
+<div style="padding-top: 4px">
+  <app-fruitbutton
+    *ngFor="let item of groceryListOptions"
+    [fruitName]="item.fruitName"
+    [fruitColor]="item.color"
+    (handleAddFruitName)="handleAddFruitName($event)"
+  />
 </div>

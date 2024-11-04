@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-fruitbutton',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './fruitbutton.component.html',
   styleUrl: './fruitbutton.component.css',
 })
-class FruitbuttonComponent {
-  // * FruitbuttonComponent model & logic
+export default class FruitbuttonComponent {
+  @Input() fruitName: string = '';
+  @Input() fruitColor: string = '';
+
+  @Output() handleAddFruitName: EventEmitter<string> = new EventEmitter();
+
+  addFruit() {
+    this.handleAddFruitName.emit(this.fruitName);
+  }
 }
-
-// * Named export
-// export { FruitbuttonComponent };
-
-// * Default export
-export default FruitbuttonComponent;
