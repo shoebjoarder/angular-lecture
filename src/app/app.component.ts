@@ -1,18 +1,24 @@
+// * Angular modules
 import { Component } from '@angular/core';
-import { IFruit } from './model/grocery';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-// * Import from named export
-// import {FruitbuttonComponent} from './fruitbutton/fruitbutton.component';
+// * Interfaces
+import { IFruit } from './model/grocery';
 
-// * Import from default export
+// * Components
 import FruitbuttonComponent from './fruitbutton/fruitbutton.component';
+import GroceryInputComponent from './component/grocery-input/grocery-input.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FruitbuttonComponent, CommonModule, FormsModule],
+  imports: [
+    FruitbuttonComponent,
+    GroceryInputComponent,
+    CommonModule,
+    FormsModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -38,6 +44,9 @@ export class AppComponent {
   isPrimary: boolean = true;
   isDisabled: boolean = false;
 
+  // * Component lifecycle example
+  hide: boolean = false;
+
   // * ngModel example
   // * Function to enter grocery item:
   handleGroceryItemChange(event: Event): void {
@@ -58,5 +67,9 @@ export class AppComponent {
     if (Boolean(fruit)) {
       this.groceryList = [...this.groceryList, fruit];
     }
+  }
+
+  handleToggleInput() {
+    this.hide = !this.hide;
   }
 }

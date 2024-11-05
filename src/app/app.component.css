@@ -8,3 +8,7 @@
   color: lightgray;
   cursor: not-allowed;
 }
+
+button {
+  margin-right: 2px;
+}

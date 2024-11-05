@@ -13,8 +13,10 @@
   <p *ngIf="!groceryItem">Please enter a fruit name</p>
 </div>
 <div>
-  <input [(ngModel)]="groceryItem" />
-
+  <button (click)="handleToggleInput()">
+    {{ hide ? "Unhide" : "Hide" }}
+  </button>
+  <app-grocery-input *ngIf="!hide" [(groceryItem)]="groceryItem" />
   <button
     (click)="handleAddFruit()"
     [ngStyle]="{
