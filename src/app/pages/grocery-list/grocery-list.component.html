@@ -1,0 +1,45 @@
+<div>
+  <h2>Grocery List</h2>
+
+  <ul>
+    <li *ngFor="let item of groceryList.sort()">
+      {{ item }}
+    </li>
+  </ul>
+
+  <p *ngIf="groceryItem">
+    You would like to add "{{ groceryItem | uppercase | slice : 0 : 3 }}"
+  </p>
+  <p *ngIf="!groceryItem">Please enter a fruit name</p>
+</div>
+<div>
+  <button (click)="handleToggleInput()">
+    {{ hide ? "Unhide" : "Hide" }}
+  </button>
+  <app-grocery-input *ngIf="!hide" [(groceryItem)]="groceryItem" />
+  <button
+    (click)="handleAddFruit()"
+    [ngStyle]="{ 'background-color': addButtonColor, color: 'white' }"
+  >
+    Add
+  </button>
+
+  <button
+    (click)="handleAddFruitName(groceryItem)"
+    [ngClass]="{
+              'button-primary': isPrimary,
+              'button-disabled': isDisabled,
+          }"
+  >
+    Add (Function)
+  </button>
+</div>
+<!-- * Input props and custom events for child components -->
+<div style="padding-top: 4px">
+  <app-fruitbutton
+    *ngFor="let item of groceryListOptions"
+    [fruitName]="item.fruitName"
+    [fruitColor]="item.color"
+    (handleAddFruitName)="handleAddFruitName($event)"
+  />
+</div>

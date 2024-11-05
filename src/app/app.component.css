@@ -1,14 +1,8 @@
-.button-primary {
-  background-color: blue;
-  color: white;
-}
-
-.button-disabled {
-  background-color: gray;
-  color: lightgray;
-  cursor: not-allowed;
+div {
+  display: flex;
+  justify-content: center;
 }
 
 button {
-  margin-right: 2px;
+  margin-right: 4px;
 }
