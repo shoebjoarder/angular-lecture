@@ -21,12 +21,28 @@ export class NewsDynamicComponent implements OnInit {
 
   ngOnInit(): void {
     this.paramId = this.route.snapshot.paramMap.get('id');
-    
+
     if (this.paramId !== null) {
-      this.newsPostService
-        .getNewsPost(this.paramId)
-        .subscribe((response: IPost) => 
-          (this.newsPost = response));
+      // * Comment the lines 46-55 and uncomment lines 58-62 to
+      // * use Promises instead of Observables
+      // * With Observables
+      this.newsPostService.getNewsPost(this.paramId).subscribe({
+        next: (response: IPost) => (this.newsPost = response),
+        error: (error) => {
+          console.error('Error in component:', error);
+        },
+        complete: () => {
+          console.log('Request completed successfully');
+        },
+      });
+
+      // * With Promises
+      // this.newsPostService
+      //   .getNewsPostPromise(this.paramId)
+      //   .then((response: IPost) => (this.newsPost = response))
+      //   .catch((error) => {
+      //     console.error('Error fetching post', error);
+      //   });
     }
   }
 }
