@@ -41,6 +41,6 @@
     *ngFor="let item of groceryListOptions"
     [fruitName]="item.fruitName"
     [fruitColor]="item.color"
-    (handleAddFruitName)="handleAddFruitName($event)"
+    (onAddFruit)="handleAddFruitName($event)"
   />
 </div>
