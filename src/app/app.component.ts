@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 // * Interfaces
-import { IFruit } from './model/grocery';
+import { IFruit } from '../model/grocery';
 
 // * Components
-import FruitbuttonComponent from './fruitbutton/fruitbutton.component';
-import GroceryInputComponent from './component/grocery-input/grocery-input.component';
+import FruitbuttonComponent from '../component/fruitbutton/fruitbutton.component';
+import GroceryInputComponent from '../component/grocery-input/grocery-input.component';
 
 @Component({
   selector: 'app-root',
