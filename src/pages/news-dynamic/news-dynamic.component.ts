@@ -1,9 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import IPost from '../../model/post';
+
 import { HttpClient, HttpHandler, HttpXhrBackend } from '@angular/common/http';
 import { firstValueFrom, Observable } from 'rxjs';
+import IPost from '../../model/post';
 
 @Component({
   selector: 'app-news-dynamic',
