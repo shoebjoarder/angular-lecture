@@ -1,8 +1,8 @@
-import { GroceryListComponent } from './pages/grocery-list/grocery-list.component';
-import { NewsComponent } from './pages/news/news.component';
-import { NewsPathComponent } from './pages/news-path/news-path.component';
-import { NewsDynamicComponent } from './pages/news-dynamic/news-dynamic.component';
 import { Routes } from '@angular/router';
+import { GroceryListComponent } from '../pages/grocery-list/grocery-list.component';
+import { NewsComponent } from '../pages/news/news.component';
+import { NewsPathComponent } from '../pages/news-path/news-path.component';
+import { NewsDynamicComponent } from '../pages/news-dynamic/news-dynamic.component';
 
 export const routes: Routes = [
   { path: '', component: GroceryListComponent },
