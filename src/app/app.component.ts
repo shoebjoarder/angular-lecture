@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { GroceryListComponent } from './pages/grocery-list/grocery-list.component';
+import { GroceryListComponent } from '../pages/grocery-list/grocery-list.component';
 
 @Component({
   selector: 'app-root',

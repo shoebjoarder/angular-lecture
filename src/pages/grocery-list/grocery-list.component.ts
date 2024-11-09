@@ -38,6 +38,10 @@ export class GroceryListComponent {
   isPrimary: boolean = true;
   isDisabled: boolean = false;
 
+  // * Input props example
+  fruit: string = 'kiwi';
+  color: string = 'green';
+
   // * ngModel example
   // * Function to enter grocery item:
   handleGroceryItemChange(event: Event): void {
