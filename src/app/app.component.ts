@@ -2,10 +2,7 @@
 import { Component } from '@angular/core';
 
 // * Components
-import { 
-  Router, 
-  RouterModule 
-} from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
