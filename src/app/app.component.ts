@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IFruit } from './model/grocery';
+import { IFruit } from '../model/grocery';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 // import {FruitbuttonComponent} from './fruitbutton/fruitbutton.component';
 
 // * Import from default export
-import FruitbuttonComponent from './fruitbutton/fruitbutton.component';
+import FruitbuttonComponent from '../components/fruitbutton/fruitbutton.component';
 
 @Component({
   selector: 'app-root',
