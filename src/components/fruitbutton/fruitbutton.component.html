@@ -2,5 +2,6 @@
   [ngStyle]="{ 'background-color': fruitColor }"
   (click)="onAddFruit.emit(fruitName)"
 >
+  <!-- (click)="onAddFruit.emit({ name: fruitName, color: fruitColor })" -->
   Add {{ fruitName }}
 </button>

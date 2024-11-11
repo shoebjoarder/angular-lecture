@@ -12,5 +12,11 @@ export default class FruitbuttonComponent {
   @Input() fruitName: string = '';
   @Input() fruitColor: string = '';
 
-  @Output() onAddFruit: EventEmitter<string> = new EventEmitter();
+  @Output() onAddFruit: EventEmitter<string> = new EventEmitter<string>();
+
+  // @Output() onAddFruit: EventEmitter<{ name: string; color: string }> =
+  //   new EventEmitter<{
+  //     name: string;
+  //     color: string;
+  //   }>();
 }

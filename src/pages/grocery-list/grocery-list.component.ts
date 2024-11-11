@@ -63,4 +63,10 @@ export class GroceryListComponent {
       this.groceryList = [...this.groceryList, fruit];
     }
   }
+  
+  handleAddFruitNameTwoParams(fruit: string, color: string) {
+    if (Boolean(fruit)) {
+      this.groceryList = [...this.groceryList, fruit];
+    }
+  }
 }
