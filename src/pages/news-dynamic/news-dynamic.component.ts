@@ -35,7 +35,7 @@ export class NewsDynamicComponent implements OnInit {
   //   private http: HttpClient,
   // ) {}
 
-  // * Dependency injection from Angular 18
+  // * Dependency injection recommended from Angular 18
   route = inject(ActivatedRoute);
   http = inject(HttpClient);
 
